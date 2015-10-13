@@ -29,7 +29,7 @@ Sandbox = {
       var start = function(app){ this.application=null;#{remotes};#{snippets};runTests(#{apiArgs});app.remote.__finished__()};
       start(application);
     """
-    
+
     if esprima?
       try
         esprima.parse code
@@ -44,12 +44,13 @@ Sandbox = {
       connected = false
       customApi.remote?.finished?()
       disconnect()
-    
+
     runner = new jailed.DynamicPlugin code, customApi.remote
     disconnect = runner.disconnect.bind(runner)
-    
+
     setTimeout (() ->
       if connected
+        customApi.remote?.finished?()
         console.error "Sandbox timed out after #{config.timeout}ms!"
         runner.disconnect()
       ), config.timeout
