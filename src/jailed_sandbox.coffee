@@ -1,6 +1,7 @@
 if !jailed?
   console.error("make sure to load jailed before the advanced markdown javascript sandbox")
 
+esprima = require 'esprima'
 _ = require 'lodash'
 once = require 'once'
 
