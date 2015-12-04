@@ -51,8 +51,7 @@ Sandbox = {
 
     setTimeout (() ->
       if connected
-        customApi.remote?.finished?()
-        console.error "Sandbox timed out after #{config.timeout}ms!"
+        customApi.remote?.finished?("Sandbox timed out after #{config.timeout}ms!")
         runner.disconnect()
       ), config.timeout
     
