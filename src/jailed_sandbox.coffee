@@ -55,6 +55,8 @@ Sandbox = {
         console.error "Sandbox timed out after #{config.timeout}ms!"
         runner.disconnect()
       ), config.timeout
+    
+    disconnect
 
   debug: (code, customApi, config) ->
     code = "debugger;\n#{code}\n //@ sourceURL=debug.js\n"
