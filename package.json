@@ -1,6 +1,6 @@
 {
   "name": "@tutor/jailed-sandbox",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Enables a Javascript Sandbox environment using jailed",
   "main": "lib/jailed_sandbox.js",
   "scripts": {
