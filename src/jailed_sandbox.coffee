@@ -28,7 +28,12 @@ Sandbox = {
     code = """
       var runTests = function(#{apiArgs}){var start = null;\n#{code}};
       var start = function(app){ this.application=null;#{remotes};#{snippets};runTests(#{apiArgs});app.remote.__finished__()};
-      start(application);
+      var globalScope;
+      if (typeof(window) === "undefined")
+        globalScope = this
+      else
+        globalScope = window
+      globalScope.start(application);
     """
 
     if esprima?
@@ -54,7 +59,7 @@ Sandbox = {
         customApi.remote?.finished?("Sandbox timed out after #{config.timeout}ms!")
         runner.disconnect()
       ), config.timeout
-    
+
     disconnect
 
   debug: (code, customApi, config) ->
