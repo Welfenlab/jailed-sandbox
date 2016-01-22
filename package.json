@@ -33,7 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "esprima": "git+https://github.com/LittleHelicase/esprima.git#1320b70bcd936c2bcf3121843d42ca4509ba8ffd",
-    "jailed": "^0.2.0",
+    "jailed": "git+https://github.com/Welfenlab/jailed.git#92484d6d9bea2627bcc2468a08356d1c77431fd5",
     "lodash": "^3.10.1",
     "once": "^1.3.2"
   }
