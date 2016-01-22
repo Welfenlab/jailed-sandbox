@@ -33,7 +33,7 @@ Sandbox = {
         globalScope = this
       else
         globalScope = window
-      globalScope.start(application);
+      start.call(globalScope, application);
     """
 
     if esprima?
